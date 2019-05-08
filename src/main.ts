@@ -2,14 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from '@/App.vue'
-import BootstrapVue from 'bootstrap-vue'
 import router from '@/router'
+import store from '@/store/index'
+import AntPlugin from '@/plugins/antd'
 
-Vue.use(BootstrapVue)
+Vue.use(AntPlugin);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   // template: '<App/>',
