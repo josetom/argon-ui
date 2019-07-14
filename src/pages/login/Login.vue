@@ -102,12 +102,12 @@ export default class Login extends Vue {
           .then((res:any) => {
             console.log(res.data)
             const user = res.data.user
-            debugger
             this.$store.commit('user/setUser', user)
             this.isLoginProcessing = false
             // this.$router.push('/dashboard/workplace')
           }, (err: Error) => {
             this.$message.error(err.message || 'Invalid email / password')
+            this.isLoginProcessing = false
           })
       }
     })
